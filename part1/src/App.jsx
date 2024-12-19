@@ -1,5 +1,4 @@
-/**
- * Exercices Part 1 (1.1.-1.2)
+// Exercices Part 1 (1.1 - 1.5)
 
 const Header = ({ course }) => (
   <div>
@@ -52,7 +51,10 @@ const App = () => {
 };
 
 export default App;
-*/
+
+
+/**
+ * Exercises part1 (1.6 - 1.14)
 
 import { useState } from "react";
 
@@ -105,3 +107,4 @@ const App = () => {
 };
 
 export default App;
+*/
