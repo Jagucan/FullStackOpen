@@ -7,6 +7,10 @@ const Button = (props) => {
 
 // Componente Statistics que muestra las estadísticas de los clics
 const Statistics = (props) => {
+	if (props.good === 0 && props.neutral === 0 && props.bad === 0) {
+		return <p>No feedback given</p>;
+	}
+
 	const { good, neutral, bad } = props;
 	const total = good + neutral + bad;
 	const totalScore = good * 1 + neutral * 0 + bad * -1;
