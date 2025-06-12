@@ -5,6 +5,17 @@ const Button = (props) => {
 	return <button onClick={handleClick}>{text}</button>;
 };
 
+const StatisticsLine = (props) => {
+	const { text, value } = props;
+	return (
+		<div>
+			<p>
+				{text} {value}
+			</p>
+		</div>
+	);
+};
+
 // Componente Statistics que muestra las estadísticas de los clics
 const Statistics = (props) => {
 	if (props.good === 0 && props.neutral === 0 && props.bad === 0) {
@@ -19,14 +30,12 @@ const Statistics = (props) => {
 
 	return (
 		<div>
-			<p>
-				good {good} <br />
-				neutral {neutral} <br />
-				bad {bad} <br />
-				all {total} <br />
-				average {average} <br />
-				positive {positive} %
-			</p>
+			<StatisticsLine text="good" value={good} />
+			<StatisticsLine text="neutral" value={neutral} />
+			<StatisticsLine text="bad" value={bad} />
+			<StatisticsLine text="all" value={total} />
+			<StatisticsLine text="average" value={average} />
+			<StatisticsLine text="positive" value={`${positive} %`} />
 		</div>
 	);
 };
