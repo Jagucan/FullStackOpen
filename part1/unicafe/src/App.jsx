@@ -5,7 +5,9 @@ const Button = (props) => {
 	return <button onClick={handleClick}>{text}</button>;
 };
 
-const Statistics = ({ good, neutral, bad }) => {
+// Componente Statistics que muestra las estadísticas de los clics
+const Statistics = (props) => {
+	const { good, neutral, bad } = props;
 	const total = good + neutral + bad;
 	const totalScore = good * 1 + neutral * 0 + bad * -1;
 	const average = total !== 0 ? totalScore / total : 0;
