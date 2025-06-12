@@ -8,11 +8,14 @@ const Button = (props) => {
 const StatisticsLine = (props) => {
 	const { text, value } = props;
 	return (
-		<div>
-			<p>
-				{text} {value}
-			</p>
-		</div>
+		<table>
+			<tbody>
+				<tr>
+					<td>{text}</td>
+					<td>{value}</td>
+				</tr>
+			</tbody>
+		</table>
 	);
 };
 
@@ -25,8 +28,8 @@ const Statistics = (props) => {
 	const { good, neutral, bad } = props;
 	const total = good + neutral + bad;
 	const totalScore = good * 1 + neutral * 0 + bad * -1;
-	const average = total !== 0 ? totalScore / total : 0;
-	const positive = total !== 0 ? (good / total) * 100 : 0;
+	const average = total !== 0 ? (totalScore / total).toFixed(2) : 0;
+	const positive = total !== 0 ? ((good / total) * 100).toFixed(2) : 0;
 
 	return (
 		<div>
